@@ -1,0 +1,860 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.1.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 97 BAM files                                     ||
+||                                                                            ||
+||                           O1_Kidney.bam                                    ||
+||                           O1_Liver.bam                                     ||
+||                           O1_Lung.bam                                      ||
+||                           O2_Heart.bam                                     ||
+||                           O2_Kidney.bam                                    ||
+||                           O2_Liver.bam                                     ||
+||                           O2_Lung.bam                                      ||
+||                           O2_Spleen.bam                                    ||
+||                           O3_Heart.bam                                     ||
+||                           O3_Kidney.bam                                    ||
+||                           O3_Liver.bam                                     ||
+||                           O3_Lung.bam                                      ||
+||                           O3_Spleen.bam                                    ||
+||                           O4_Heart.bam                                     ||
+||                           O4_Kidney.bam                                    ||
+||                           O4_Liver.bam                                     ||
+||                           O4_Lung.bam                                      ||
+||                           O5_Heart.bam                                     ||
+||                           O5_Spleen.bam                                    ||
+||                           S72_Heart.bam                                    ||
+||                           S72_Kidney.bam                                   ||
+||                           S72_Liver.bam                                    ||
+||                           S72_Lung.bam                                     ||
+||                           S76_Spleen.bam                                   ||
+||                           S80_Heart.bam                                    ||
+||                           S80_Kidney.bam                                   ||
+||                           S80_Liver.bam                                    ||
+||                           S80_Lung.bam                                     ||
+||                           S80_Spleen.bam                                   ||
+||                           S85_Heart.bam                                    ||
+||                           S85_Kidney.bam                                   ||
+||                           S85_Liver.bam                                    ||
+||                           S85_Lung.bam                                     ||
+||                           S85_Spleen.bam                                   ||
+||                           S87_Heart.bam                                    ||
+||                           S87_Kidney.bam                                   ||
+||                           S87_Liver.bam                                    ||
+||                           S87_Lung.bam                                     ||
+||                           S87_Spleen.bam                                   ||
+||                           T48_Spleen.bam                                   ||
+||                           T51_Heart.bam                                    ||
+||                           T51_Kidney.bam                                   ||
+||                           T51_Liver.bam                                    ||
+||                           T51_Lung.bam                                     ||
+||                           T52_Heart.bam                                    ||
+||                           T52_Kidney.bam                                   ||
+||                           T52_Liver.bam                                    ||
+||                           T52_Lung.bam                                     ||
+||                           T52_Spleen.bam                                   ||
+||                           T55_Lung.bam                                     ||
+||                           T59_Heart.bam                                    ||
+||                           T59_Kidney.bam                                   ||
+||                           T59_Liver.bam                                    ||
+||                           T59_Lung.bam                                     ||
+||                           T59_Spleen.bam                                   ||
+||                           T63_Heart.bam                                    ||
+||                           T63_Kidney.bam                                   ||
+||                           T63_Liver.bam                                    ||
+||                           T63_Lung.bam                                     ||
+||                           T63_Spleen.bam                                   ||
+||                           T69_Heart.bam                                    ||
+||                           T69_Kidney.bam                                   ||
+||                           T69_Liver.bam                                    ||
+||                           T69_Lung.bam                                     ||
+||                           T69_Spleen.bam                                   ||
+||                           T75_Heart.bam                                    ||
+||                           T75_Kidney.bam                                   ||
+||                           T75_Liver.bam                                    ||
+||                           T79_Heart.bam                                    ||
+||                           T79_Kidney.bam                                   ||
+||                           T79_Liver.bam                                    ||
+||                           T79_Lung.bam                                     ||
+||                           T79_Spleen.bam                                   ||
+||                           T95_Heart.bam                                    ||
+||                           T95_Kidney.bam                                   ||
+||                           T95_Liver.bam                                    ||
+||                           T95_Lung.bam                                     ||
+||                           T95_Spleen.bam                                   ||
+||                           Y3_Heart.bam                                     ||
+||                           Y3_Kidney.bam                                    ||
+||                           Y3_Liver.bam                                     ||
+||                           Y3_Lung.bam                                      ||
+||                           Y3_Spleen.bam                                    ||
+||                           Y4_Heart.bam                                     ||
+||                           Y4_Kidney.bam                                    ||
+||                           Y4_Liver.bam                                     ||
+||                           Y4_Lung.bam                                      ||
+||                           Y4_Spleen.bam                                    ||
+||                           Y5_Heart.bam                                     ||
+||                           Y5_Kidney.bam                                    ||
+||                           Y5_Liver.bam                                     ||
+||                           Y5_Spleen.bam                                    ||
+||                           Y6_Heart.bam                                     ||
+||                           Y6_Kidney.bam                                    ||
+||                           Y6_Liver.bam                                     ||
+||                           Y6_Spleen.bam                                    ||
+||                           Y9_Lung.bam                                      ||
+||                                                                            ||
+||             Output file : count.txt                                        ||
+||                 Summary : count.txt.summary                                ||
+||              Paired-end : yes                                              ||
+||        Count read pairs : no                                               ||
+||              Annotation : Mus_musculus.GRCm39.114.gtf (GTF)                ||
+||      Dir for temp files : /share/home/shli24/2025OVX/data/cleanData        ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file Mus_musculus.GRCm39.114.gtf ...                       ||
+||    Features : 1298921                                                      ||
+||    Meta-features : 78317                                                   ||
+||    Chromosomes/contigs : 38                                                ||
+||                                                                            ||
+|| Process BAM file O1_Kidney.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 56228985                                             ||
+||    Successfully assigned alignments : 34829551 (61.9%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O1_Liver.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 57715602                                             ||
+||    Successfully assigned alignments : 33797999 (58.6%)                     ||
+||    Running time : 0.86 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O1_Lung.bam...                                            ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52384940                                             ||
+||    Successfully assigned alignments : 38028413 (72.6%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O2_Heart.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 59560831                                             ||
+||    Successfully assigned alignments : 32324177 (54.3%)                     ||
+||    Running time : 0.92 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O2_Kidney.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 56761897                                             ||
+||    Successfully assigned alignments : 34539723 (60.9%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O2_Liver.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 60056489                                             ||
+||    Successfully assigned alignments : 31503128 (52.5%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O2_Lung.bam...                                            ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 53702882                                             ||
+||    Successfully assigned alignments : 37381525 (69.6%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O2_Spleen.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52128066                                             ||
+||    Successfully assigned alignments : 36145877 (69.3%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O3_Heart.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 65044165                                             ||
+||    Successfully assigned alignments : 27465336 (42.2%)                     ||
+||    Running time : 0.93 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O3_Kidney.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 59418165                                             ||
+||    Successfully assigned alignments : 32540548 (54.8%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O3_Liver.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 56586616                                             ||
+||    Successfully assigned alignments : 34783556 (61.5%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O3_Lung.bam...                                            ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52231077                                             ||
+||    Successfully assigned alignments : 38454628 (73.6%)                     ||
+||    Running time : 0.86 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O3_Spleen.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52956535                                             ||
+||    Successfully assigned alignments : 36807302 (69.5%)                     ||
+||    Running time : 0.86 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O4_Heart.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 63270746                                             ||
+||    Successfully assigned alignments : 29800502 (47.1%)                     ||
+||    Running time : 0.92 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O4_Kidney.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 61122555                                             ||
+||    Successfully assigned alignments : 31431050 (51.4%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O4_Liver.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 58300342                                             ||
+||    Successfully assigned alignments : 32991086 (56.6%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O4_Lung.bam...                                            ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52006487                                             ||
+||    Successfully assigned alignments : 38619186 (74.3%)                     ||
+||    Running time : 0.85 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O5_Heart.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 57974656                                             ||
+||    Successfully assigned alignments : 32659320 (56.3%)                     ||
+||    Running time : 1.06 minutes                                             ||
+||                                                                            ||
+|| Process BAM file O5_Spleen.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 53709261                                             ||
+||    Successfully assigned alignments : 35502953 (66.1%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S72_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 61103154                                             ||
+||    Successfully assigned alignments : 31147261 (51.0%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S72_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 59042574                                             ||
+||    Successfully assigned alignments : 32395405 (54.9%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S72_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 59710868                                             ||
+||    Successfully assigned alignments : 32015682 (53.6%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S72_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52489882                                             ||
+||    Successfully assigned alignments : 37321597 (71.1%)                     ||
+||    Running time : 0.85 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S76_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 53801030                                             ||
+||    Successfully assigned alignments : 36373805 (67.6%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S80_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 63622362                                             ||
+||    Successfully assigned alignments : 29615564 (46.5%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S80_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 56612843                                             ||
+||    Successfully assigned alignments : 35280362 (62.3%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S80_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 61401315                                             ||
+||    Successfully assigned alignments : 30690268 (50.0%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S80_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52631987                                             ||
+||    Successfully assigned alignments : 37957165 (72.1%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S80_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52520571                                             ||
+||    Successfully assigned alignments : 36060620 (68.7%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S85_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 62306069                                             ||
+||    Successfully assigned alignments : 30522575 (49.0%)                     ||
+||    Running time : 0.93 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S85_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 61322808                                             ||
+||    Successfully assigned alignments : 31325017 (51.1%)                     ||
+||    Running time : 0.92 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S85_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 57513096                                             ||
+||    Successfully assigned alignments : 33109007 (57.6%)                     ||
+||    Running time : 0.86 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S85_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 44870979                                             ||
+||    Successfully assigned alignments : 30739672 (68.5%)                     ||
+||    Running time : 0.84 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S85_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52677589                                             ||
+||    Successfully assigned alignments : 36051051 (68.4%)                     ||
+||    Running time : 0.92 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S87_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 64756327                                             ||
+||    Successfully assigned alignments : 28212221 (43.6%)                     ||
+||    Running time : 0.94 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S87_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 63497285                                             ||
+||    Successfully assigned alignments : 30036057 (47.3%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S87_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 55002055                                             ||
+||    Successfully assigned alignments : 28963271 (52.7%)                     ||
+||    Running time : 0.82 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S87_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52630392                                             ||
+||    Successfully assigned alignments : 37107392 (70.5%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file S87_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52694607                                             ||
+||    Successfully assigned alignments : 35868873 (68.1%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T48_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 51940750                                             ||
+||    Successfully assigned alignments : 35710918 (68.8%)                     ||
+||    Running time : 1.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T51_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 61006851                                             ||
+||    Successfully assigned alignments : 31662589 (51.9%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T51_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 58634610                                             ||
+||    Successfully assigned alignments : 33361560 (56.9%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T51_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 62504024                                             ||
+||    Successfully assigned alignments : 30219572 (48.3%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T51_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 53493810                                             ||
+||    Successfully assigned alignments : 37096140 (69.3%)                     ||
+||    Running time : 0.86 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T52_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 58430155                                             ||
+||    Successfully assigned alignments : 33442019 (57.2%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T52_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 60186015                                             ||
+||    Successfully assigned alignments : 32393647 (53.8%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T52_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 59795260                                             ||
+||    Successfully assigned alignments : 30730202 (51.4%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T52_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52243310                                             ||
+||    Successfully assigned alignments : 36950336 (70.7%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T52_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 51508798                                             ||
+||    Successfully assigned alignments : 35324106 (68.6%)                     ||
+||    Running time : 1.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T55_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 51976371                                             ||
+||    Successfully assigned alignments : 37194339 (71.6%)                     ||
+||    Running time : 0.98 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T59_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 62194968                                             ||
+||    Successfully assigned alignments : 30957694 (49.8%)                     ||
+||    Running time : 0.92 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T59_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 59455765                                             ||
+||    Successfully assigned alignments : 32625247 (54.9%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T59_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 60715005                                             ||
+||    Successfully assigned alignments : 31068013 (51.2%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T59_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 51972525                                             ||
+||    Successfully assigned alignments : 37894472 (72.9%)                     ||
+||    Running time : 0.86 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T59_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52062195                                             ||
+||    Successfully assigned alignments : 36536466 (70.2%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T63_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 62597454                                             ||
+||    Successfully assigned alignments : 30308989 (48.4%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T63_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 57399182                                             ||
+||    Successfully assigned alignments : 33795269 (58.9%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T63_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 63031806                                             ||
+||    Successfully assigned alignments : 29553811 (46.9%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T63_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 51788602                                             ||
+||    Successfully assigned alignments : 38104676 (73.6%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T63_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52189722                                             ||
+||    Successfully assigned alignments : 36064006 (69.1%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T69_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 63878424                                             ||
+||    Successfully assigned alignments : 29379133 (46.0%)                     ||
+||    Running time : 0.95 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T69_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 58450077                                             ||
+||    Successfully assigned alignments : 33927397 (58.0%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T69_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 51030373                                             ||
+||    Successfully assigned alignments : 28051907 (55.0%)                     ||
+||    Running time : 0.79 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T69_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52006975                                             ||
+||    Successfully assigned alignments : 38060524 (73.2%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T69_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52306873                                             ||
+||    Successfully assigned alignments : 36130018 (69.1%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T75_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 61708441                                             ||
+||    Successfully assigned alignments : 31441122 (51.0%)                     ||
+||    Running time : 0.93 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T75_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 63678098                                             ||
+||    Successfully assigned alignments : 29507124 (46.3%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T75_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 58190360                                             ||
+||    Successfully assigned alignments : 34030395 (58.5%)                     ||
+||    Running time : 0.86 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T79_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 62903236                                             ||
+||    Successfully assigned alignments : 29251002 (46.5%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T79_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 55912963                                             ||
+||    Successfully assigned alignments : 35553183 (63.6%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T79_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 56388426                                             ||
+||    Successfully assigned alignments : 29505913 (52.3%)                     ||
+||    Running time : 0.86 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T79_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52779763                                             ||
+||    Successfully assigned alignments : 37142817 (70.4%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T79_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52085046                                             ||
+||    Successfully assigned alignments : 36146302 (69.4%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T95_Heart.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 61359293                                             ||
+||    Successfully assigned alignments : 31255246 (50.9%)                     ||
+||    Running time : 0.92 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T95_Kidney.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 63183521                                             ||
+||    Successfully assigned alignments : 29704869 (47.0%)                     ||
+||    Running time : 0.92 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T95_Liver.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 60349501                                             ||
+||    Successfully assigned alignments : 31199235 (51.7%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T95_Lung.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 51982766                                             ||
+||    Successfully assigned alignments : 37689692 (72.5%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T95_Spleen.bam...                                         ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52874918                                             ||
+||    Successfully assigned alignments : 36191647 (68.4%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y3_Heart.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 59183788                                             ||
+||    Successfully assigned alignments : 31594973 (53.4%)                     ||
+||    Running time : 1.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y3_Kidney.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 56743190                                             ||
+||    Successfully assigned alignments : 34284906 (60.4%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y3_Liver.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 57390270                                             ||
+||    Successfully assigned alignments : 33161853 (57.8%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y3_Lung.bam...                                            ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 51933673                                             ||
+||    Successfully assigned alignments : 37982398 (73.1%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y3_Spleen.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52166618                                             ||
+||    Successfully assigned alignments : 36463756 (69.9%)                     ||
+||    Running time : 1.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y4_Heart.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 62433940                                             ||
+||    Successfully assigned alignments : 30542368 (48.9%)                     ||
+||    Running time : 0.93 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y4_Kidney.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 56530692                                             ||
+||    Successfully assigned alignments : 33879438 (59.9%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y4_Liver.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 55399974                                             ||
+||    Successfully assigned alignments : 35805511 (64.6%)                     ||
+||    Running time : 0.88 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y4_Lung.bam...                                            ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 51516951                                             ||
+||    Successfully assigned alignments : 37719055 (73.2%)                     ||
+||    Running time : 0.98 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y4_Spleen.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 53522322                                             ||
+||    Successfully assigned alignments : 36052155 (67.4%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y5_Heart.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 60755207                                             ||
+||    Successfully assigned alignments : 30463551 (50.1%)                     ||
+||    Running time : 0.92 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y5_Kidney.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 57457875                                             ||
+||    Successfully assigned alignments : 33252767 (57.9%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y5_Liver.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 58325469                                             ||
+||    Successfully assigned alignments : 32549273 (55.8%)                     ||
+||    Running time : 0.90 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y5_Spleen.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 54411139                                             ||
+||    Successfully assigned alignments : 36226379 (66.6%)                     ||
+||    Running time : 1.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y6_Heart.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 58226526                                             ||
+||    Successfully assigned alignments : 32743755 (56.2%)                     ||
+||    Running time : 0.91 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y6_Kidney.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 54942518                                             ||
+||    Successfully assigned alignments : 36250461 (66.0%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y6_Liver.bam...                                           ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 55591087                                             ||
+||    Successfully assigned alignments : 35557176 (64.0%)                     ||
+||    Running time : 0.87 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y6_Spleen.bam...                                          ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 52405642                                             ||
+||    Successfully assigned alignments : 36423360 (69.5%)                     ||
+||    Running time : 0.89 minutes                                             ||
+||                                                                            ||
+|| Process BAM file Y9_Lung.bam...                                            ||
+||    Paired-end reads are included.                                          ||
+||    The reads are assigned on the single-end mode.                          ||
+||    Total alignments : 43001704                                             ||
+||    Successfully assigned alignments : 31754395 (73.8%)                     ||
+||    Running time : 0.85 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/share/home/shli24/2025  ||
+|| OVX/data/cleanData/count.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+TASK_INFO:
+    JOB_ID:                     34331315
+    JOB_NAME:                   count
+    TASK_NAME:                  rg0.0
+    REPLICA:                    1
+    TASKGROUP_NAME:             rg0
+    SUBMIT_NODE:                cli-X86-01
+    EXEC_NODE:                  agent-X86-18
+    EXIT_CODE:                  0
+    EXIT_MESSAGE:               Job execution succeeded
+
+RESOURCE_USAGE_SUMMARY:
+    REQ_CPU:                    12
+    REQ_MEM:                    128
+    REQ_GPU:                    0
+    REQ_NPU:                    0
+    USER_CPU_TIME:              5150
+    SYSTEM_CPU_TIME:            71
+    MEMSW_MAX:                  1170
+    SWAP_MAX:                   0
+    MEM_MAX:                    1170
+    MEM_AVG:                    620
+    MRUN_TIME:                  5252
+    SSTOPPED_TIME:              0
+    CPU_UTIL_AVG(%):            99
+    CPU_UTIL_RECENT(%):         97
+    USER_CPU_TIME_SUM:          5150
+    SYSTEM_CPU_TIME_SUM:        71
+    MEMSW_MAX_SUM:              1170
+    SWAP_MAX_SUM:               0
+    MEM_MAX_SUM:                1170
+    MEM_AVG_SUM:                620
+    CPU_UTIL_AVG_SUM(%):        99
+    CPU_UTIL_RECENT_SUM(%):     97
+    GPU_SM_UTIL_AVG(%):         -
+    GPU_SM_UTIL_RECENT(%):      -
+    NPU_SM_MEM_SUM(MB):         -
+    NPU_SM_AICORE_UTIL(%):      -
+

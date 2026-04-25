@@ -1,0 +1,81 @@
+Read1 before filtering:
+total reads: 24040574
+total bases: 3606086100
+Q20 bases: 3565667286(98.8792%)
+Q30 bases: 3310286356(91.7972%)
+
+Read2 before filtering:
+total reads: 24040574
+total bases: 3606086100
+Q20 bases: 3577343753(99.2029%)
+Q30 bases: 3471913545(96.2793%)
+
+Read1 after filtering:
+total reads: 24040574
+total bases: 3604171053
+Q20 bases: 3563778561(98.8793%)
+Q30 bases: 3308520541(91.797%)
+
+Read2 after filtering:
+total reads: 24040574
+total bases: 3604171053
+Q20 bases: 3575464755(99.2035%)
+Q30 bases: 3470116397(96.2806%)
+
+Filtering result:
+reads passed filter: 48081148
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 0
+reads with adapter trimmed: 298068
+bases trimmed due to adapters: 3830094
+
+Duplication rate: 4.84292%
+
+Insert size peak (evaluated by paired-end reads): 265
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp -i /share/home/shli24/2025OVX/data/org_data/T63_Spleen_1.fq.gz -I /share/home/shli24/2025OVX/data/org_data/T63_Spleen_2.fq.gz -o /share/home/shli24/Tissue_com/data/E2_RNA/cleanData/T63_Spleen_1_clean.fq.gz -O /share/home/shli24/Tissue_com/data/E2_RNA/cleanData/T63_Spleen_2_clean.fq.gz 
+fastp v0.23.4, time used: 278 seconds
+
+TASK_INFO:
+    JOB_ID:                     34305716
+    JOB_NAME:                   fastp_T63_Spleen
+    TASK_NAME:                  rg0.0
+    REPLICA:                    1
+    TASKGROUP_NAME:             rg0
+    SUBMIT_NODE:                cli-ARM-01
+    EXEC_NODE:                  agent-ARM-26
+    EXIT_CODE:                  0
+    EXIT_MESSAGE:               Job execution succeeded
+
+RESOURCE_USAGE_SUMMARY:
+    REQ_CPU:                    2
+    REQ_MEM:                    128
+    REQ_GPU:                    0
+    REQ_NPU:                    0
+    USER_CPU_TIME:              488
+    SYSTEM_CPU_TIME:            3
+    MEMSW_MAX:                  2046
+    SWAP_MAX:                   0
+    MEM_MAX:                    2046
+    MEM_AVG:                    1535
+    MRUN_TIME:                  279
+    SSTOPPED_TIME:              0
+    CPU_UTIL_AVG(%):            176
+    CPU_UTIL_RECENT(%):         191
+    USER_CPU_TIME_SUM:          488
+    SYSTEM_CPU_TIME_SUM:        3
+    MEMSW_MAX_SUM:              2046
+    SWAP_MAX_SUM:               0
+    MEM_MAX_SUM:                2046
+    MEM_AVG_SUM:                1535
+    CPU_UTIL_AVG_SUM(%):        176
+    CPU_UTIL_RECENT_SUM(%):     191
+    GPU_SM_UTIL_AVG(%):         -
+    GPU_SM_UTIL_RECENT(%):      -
+    NPU_SM_MEM_SUM(MB):         -
+    NPU_SM_AICORE_UTIL(%):      -
+

@@ -1,0 +1,42 @@
+Loading arm/samtools/1.21
+  Loading requirement: arm/htslib/1.21
+
+TASK_INFO:
+    JOB_ID:                     35087558
+    JOB_NAME:                   bowtie2_C33
+    TASK_NAME:                  rg0.0
+    REPLICA:                    1
+    TASKGROUP_NAME:             rg0
+    SUBMIT_NODE:                cli-X86-01
+    EXEC_NODE:                  agent-X86-03
+    EXIT_CODE:                  10001
+    EXIT_MESSAGE:               Job command execution failed, errCode: 126
+
+RESOURCE_USAGE_SUMMARY:
+    REQ_CPU:                    4
+    REQ_MEM:                    128
+    REQ_GPU:                    0
+    REQ_NPU:                    0
+    USER_CPU_TIME:              0
+    SYSTEM_CPU_TIME:            0
+    MEMSW_MAX:                  8
+    SWAP_MAX:                   0
+    MEM_MAX:                    8
+    MEM_AVG:                    0
+    MRUN_TIME:                  3
+    SSTOPPED_TIME:              0
+    CPU_UTIL_AVG(%):            8
+    CPU_UTIL_RECENT(%):         0
+    USER_CPU_TIME_SUM:          0
+    SYSTEM_CPU_TIME_SUM:        0
+    MEMSW_MAX_SUM:              8
+    SWAP_MAX_SUM:               0
+    MEM_MAX_SUM:                8
+    MEM_AVG_SUM:                0
+    CPU_UTIL_AVG_SUM(%):        8
+    CPU_UTIL_RECENT_SUM(%):     0
+    GPU_SM_UTIL_AVG(%):         -
+    GPU_SM_UTIL_RECENT(%):      -
+    NPU_SM_MEM_SUM(MB):         -
+    NPU_SM_AICORE_UTIL(%):      -
+
